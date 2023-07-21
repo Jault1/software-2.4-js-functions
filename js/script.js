@@ -73,15 +73,18 @@ Note: You can not use Math.pow function. You need to write your own implementati
 */
 function pow(num1, num2) {
     let product = 0;
-    for (let i = 1; i < num2; i++) {
-       product += num1 * num1;
-        console.log('Looping')
+    for (let i = 0; i < (num2 - 1); i++) {
+        if (num1 == 1) {
+            product = 1;
+        } else {
+            product += num1 * num1;
+           console.log('Looping: ' + product)
+        }
     }
     console.log(product);
-
 }
 
-pow(2, 2);
-pow(1,2)
-pow(1,8)
-pow(2,3)
+    pow(2, 2);
+    pow(1, 2);
+    pow(1, 8);
+    pow(2, 3);
