@@ -66,25 +66,47 @@ celToKel(-13);
 
 
 console.log('==================');
+console.log('Using my function & calc');
 /* Q4. Create a function called pow that gets two values and computes for the power value of the two numbers
 pow(2, 3) -> 2 * 2 * 2 -> 8
 
 Note: You can not use Math.pow function. You need to write your own implementation of the function.
 */
-function pow(num1, num2) {
+function pow(num1, multiplyTimes) {
     let product = 0;
-    for (let i = 0; i < (num2 - 1); i++) {
+    for (let i = 0; i < (multiplyTimes - 1); i++) {
         if (num1 == 1) {
             product = 1;
         } else {
-            product += num1 * num1;
-           console.log('Looping: ' + product)
+            if (num1 <= 2) {
+                product += (num1 * num1);
+            } else {
+                if (i == 0) {
+                    product += (num1 * num1);
+                    console.log("First time through the loop, product =" + product + ".")
+                } else {
+                    product *= num1;
+                    console.log("Looping =" + product + " here.")
+                }
+            }
         }
     }
-    console.log(product);
+    console.log("Answer: " + product);
+
 }
 
     pow(2, 2);
     pow(1, 2);
     pow(1, 8);
     pow(2, 3);
+    pow(3, 3);
+    pow(9, 5);
+
+    console.log("-----------------------");
+    console.log("Using Math.pow to check");
+    console.log(Math.pow(2, 2));
+    console.log(Math.pow(1, 2));
+    console.log(Math.pow(1, 8));
+    console.log(Math.pow(2, 3));
+    console.log(Math.pow(3, 3));
+    console.log(Math.pow(9, 5));
